@@ -1,0 +1,41 @@
+﻿@model LoginApplication.Models.Login
+
+@{
+	ViewData["Title"] = "Register";
+}
+
+<h2>Register User</h2>
+
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Register">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Username" class="control-label"></label>
+				<input asp-for="Username" class="form-control" />
+				<span asp-validation-for="Username" class="text-danger"></span>
+			</div>
+			<div class="form-group mt-2">
+				<label asp-for="Password" class="control-label"></label>
+				<input asp-for="Password" class="form-control" type="password" />
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+			<div class="form-group mt-2">
+				<label for="confirmPassword" class="control-label">Confirm Password</label>
+				<input id="confirmPassword" class="form-control" name="confirmPassword" type="password" data-val="true" data-val-required="This field is required" />
+				<span class="text-danger" data-valmsg-for="confirmPassword" data-valmsg-replace="true"></span>
+			</div>
+			<div class="form-group mt-3">
+				<input type="submit" value="Sign Up" class="btn btn-dark" />
+				<a asp-action="Index" class="btn btn-outline-secondary ms-2">Go back to login</a>
+			</div>
+
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

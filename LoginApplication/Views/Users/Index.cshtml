@@ -1,0 +1,12 @@
+﻿@model LoginApplication.Models.Login
+
+@{
+	ViewData["Title"] = "Logged In";
+	Login session = Login.GetSession();
+}
+
+<h2>Welcome, @session.Username!</h2>
+
+<p>
+	You are logged in!
+</p>
